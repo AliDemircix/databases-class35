@@ -58,8 +58,6 @@ async function queryDatabase() {
 
     connection.connect();
 
-    getPopulation(tableName, countryName, countryCode, cb);
-
     getPopulationSecurely(tableName, countryName, countryCode, cb);
   } catch (error) {
     console.error(error);
