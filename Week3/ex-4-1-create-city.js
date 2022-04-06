@@ -9,7 +9,9 @@ const client = new MongoClient(uri, {
 });
 
 client.connect((err) => {
-  if (err) throw err;
+  if (err) {
+    throw err;
+  }
 
   const collection = client.db('world').collection('city');
 

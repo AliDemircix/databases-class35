@@ -22,7 +22,7 @@ async function seedDatabase() {
 
   const insertIntoAccountChanges = `
     INSERT INTO accountChanges (changeNumber, accountNumber, amount, changedDate, remark) VALUES ? ;`;
-  const accountChangesValues = [
+  const accountOperations = [
     [6, 101, 1000, '2022-04-04 12:19:12', 'Sent'],
     [7, 102, 1000, '2022-04-05 22:22:22', 'Received'],
   ];
@@ -34,7 +34,7 @@ async function seedDatabase() {
 
     await execQuery(sendMoney);
     await execQuery(receiveMoney);
-    await execQuery(insertIntoAccountChanges, [accountChangesValues]);
+    await execQuery(insertIntoAccountChanges, [accountOperations]);
 
     await execQuery('COMMIT');
   } catch (error) {
