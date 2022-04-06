@@ -28,7 +28,7 @@ async function seedDatabase() {
 
   const addColumnMentor = `
   ALTER TABLE authors
-  ADD COLUMN mentor INT,
+  ADD COLUMN mentor_no INT,
   ADD CONSTRAINT FOREIGN KEY(mentor) REFERENCES authors(author_no);`;
 
   connection.connect();
